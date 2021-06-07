@@ -1,0 +1,62 @@
+body {
+  background-image: url(./img/53-537087_wood-table-blur-background.jpg);
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.container {
+  margin-top: 30px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  margin-top: 10px;
+  width: 300px;
+}
+
+.content p {
+  display: flex;
+  justify-content: center;
+}
+
+#gameID {
+  font-size: 30px;
+  font-weight: 600;
+  color: white;
+  text-shadow: -4px 3px 10px rgba(0, 0, 0, 0.98);
+}
+
+#playerMarker {
+  font-size: 25px;
+  font-weight: bolder;
+  color: white;
+  text-shadow: -4px 3px 10px rgba(0, 0, 0, 0.98);
+}
+
+#loading {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 56px;
+}
+
+#wait {
+  padding-bottom: 50px;
+  font-weight: bold;
+  cursor: progress;
+  color: white;
+  text-shadow: -4px 3px 10px rgba(0, 0, 0, 0.98);
+}
+
+@media screen and (max-width: 992px) {
+  .container {
+    width: 400px;
+  }
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic-Tac-Toe</title>
+
+    <link rel="icon" href="./css/img/Logo-Header.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" href="./css/game-style.css" />
+  </head>
+  <body>
+    <h1 id="title">Tic-Tac-Toe</h1>
+
+    <div class="game">
+      <div class="container">
+        <div class="game-row">
+          <!-- GAME TABLE -->
+          <div class="game-table">
+            <div class="container">
+              <div class="row">
+                <div class="column" onclick="boxOne()">
+                  <h3 class="tile" id="box1"></h3>
+                </div>
+                <div class="column" onclick="boxTwo()">
+                  <h3 class="tile" id="box2"></h3>
+                </div>
+                <div class="column" onclick="boxThree()">
+                  <h3 class="tile" id="box3"></h3>
+                </div>
+              </div>
+              <div class="row">
+                <div class="column" onclick="boxFour()">
+                  <h3 class="tile" id="box4"></h3>
+                </div>
+                <div class="column" onclick="boxFive()">
+                  <h3 class="tile" id="box5"></h3>
+                </div>
+                <div class="column" onclick="boxSix()">
+                  <h3 class="tile" id="box6"></h3>
+                </div>
+              </div>
+              <div class="row">
+                <div class="column" onclick="boxSeven()">
+                  <h3 class="tile" id="box7"></h3>
+                </div>
+                <div class="column" onclick="boxEight()">
+                  <h3 class="tile" id="box8"></h3>
+                </div>
+                <div class="column" onclick="boxNine()">
+                  <h3 class="tile" id="box9"></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- GAME INFO? -->
+          <div class="game-state">
+            <div class="game-text">
+              <p id="player-marker"></p>
+              <p id="winner">Winner is player X</p>
+            </div>
+            <div class="game-button">
+              <button id="reset">Reset Game</button>
+              <button id="quit" onclick="quit()">Quit Game</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/game.js"></script>
+  </body>
+</html>

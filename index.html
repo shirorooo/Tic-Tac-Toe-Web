@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic-Tac-Toe</title>
+
+    <link rel="icon" href="./css/img/Logo-Header.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" href="css/index-html.css" />
+  </head>
+  <body>
+    <div class="init-page">
+      <div class="container">
+        <div id="logo">
+          <img src="./css/img/Tic-Tac-Toe Logo.png" alt="" />
+        </div>
+
+        <!-- GAME LOBBY -->
+        <div class="create-game">
+          <button onclick="createGame()" id="enter-lobby">Create Lobby</button>
+          <button id="join-lobby" onclick="enterLobby()">Join Lobby</button>
+        </div>
+
+        <!-- JOIN GAME -->
+        <div class="join-lobby">
+          <div class="input-field">
+            <input
+              type="text"
+              id="join-game"
+              placeholder="Enter a Game ID:"
+              autocomplete="off"
+            />
+          </div>
+          <button id="join" onclick="joinGame()">Join Game</button>
+          <button id="exit" onclick="returnLobby()">Go back to Lobby</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/index.js"></script>
+  </body>
+</html>
