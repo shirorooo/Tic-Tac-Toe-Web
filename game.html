@@ -20,35 +20,35 @@
           <div class="game-table">
             <div class="container">
               <div class="row">
-                <div class="column" onclick="boxOne()">
+                <div id="column" onclick="boxOne()">
                   <h3 class="tile" id="box1"></h3>
                 </div>
-                <div class="column" onclick="boxTwo()">
+                <div id="column" onclick="boxTwo()">
                   <h3 class="tile" id="box2"></h3>
                 </div>
-                <div class="column" onclick="boxThree()">
+                <div id="column" onclick="boxThree()">
                   <h3 class="tile" id="box3"></h3>
                 </div>
               </div>
               <div class="row">
-                <div class="column" onclick="boxFour()">
+                <div id="column" onclick="boxFour()">
                   <h3 class="tile" id="box4"></h3>
                 </div>
-                <div class="column" onclick="boxFive()">
+                <div id="column" onclick="boxFive()">
                   <h3 class="tile" id="box5"></h3>
                 </div>
-                <div class="column" onclick="boxSix()">
+                <div id="column" onclick="boxSix()">
                   <h3 class="tile" id="box6"></h3>
                 </div>
               </div>
               <div class="row">
-                <div class="column" onclick="boxSeven()">
+                <div id="column" onclick="boxSeven()">
                   <h3 class="tile" id="box7"></h3>
                 </div>
-                <div class="column" onclick="boxEight()">
+                <div id="column" onclick="boxEight()">
                   <h3 class="tile" id="box8"></h3>
                 </div>
-                <div class="column" onclick="boxNine()">
+                <div id="column" onclick="boxNine()">
                   <h3 class="tile" id="box9"></h3>
                 </div>
               </div>
@@ -62,7 +62,7 @@
               <p id="winner">Winner is player X</p>
             </div>
             <div class="game-button">
-              <button id="reset">Reset Game</button>
+              <button id="reset" onclick="quit()">Reset Game</button>
               <button id="quit" onclick="quit()">Quit Game</button>
             </div>
           </div>

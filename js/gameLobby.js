@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     document.getElementById('gameID').innerHTML = `Game ID: ${gameID}`;
     document.getElementById('playerMarker').innerHTML = "Your marker for the game is: " + `<b>${playerMarker}</b>`;
 
-    setInterval(() =>{
+    const playerChecker = setInterval(() =>{
 
         let xhr = new XMLHttpRequest;
 
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         xhr.onload = () =>{
             if(xhr.readyState == 4 && xhr.status == 200){
                 if(xhr.responseText == "true"){
-                clearInterval();
+                clearInterval(playerChecker);
                 window.location.href = `${window.origin}/game.html?id=` + gameID + `&playerMarker=` + playerMarker;
                 }
             } else {
@@ -25,6 +25,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
         }
         xhr.send();
 
-    }, 2000);
+    }, 3000);
 
 });
