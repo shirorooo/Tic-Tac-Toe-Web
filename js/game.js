@@ -1,12 +1,16 @@
 document.addEventListener("DOMContentLoaded", function(event){
 
-  document.getElementById('reset').style.display = 'none';
-  document.getElementById('winner').style.display = 'none';
-
   let url = window.location.search;
   let urlParam = new URLSearchParams(url);
   let playerMarker = urlParam.get('playerMarker');
   let gameID = urlParam.get('id');
+
+
+  document.getElementById('reset').style.display = 'none';
+  document.getElementById('winner').style.display = 'none';
+  if(playerMarker === "O"){
+    document.getElementById('overlay').style.display = "block";
+  }
 
   document.getElementById('player-marker').innerHTML = `Your marker is: ${playerMarker}`
 
@@ -55,80 +59,123 @@ document.addEventListener("DOMContentLoaded", function(event){
     if(move[0] === move[1] && move[0] === move[2] && move[1] === move[2] && move[0] !== "" && move[1] !== "" && move[2] !== ""){
       clearInterval(stateChecker);
       document.getElementById('winner').style.display = 'block';
-      document.getElementById('winner').innerHTML = `Game End: Winner ${move[0]}`;
-      alert(`Game End: Winner ${move[0]}`);
       document.getElementById('quit').style.display = 'none';
       document.getElementById('reset').style.display = 'block';
+      document.getElementById('player-turn').innerHTML = `Game End: Winner ${move[0]}`;
+      document.getElementById('player-turn').style.marginTop = "200px";
+      document.getElementById('overlay').style.cursor = 'default';
+      document.getElementById('overlay').style.display = "block";
+      document.getElementById('player-wait').style.display = 'none';
     }
     else if(move[3] === move[4] && move[3] === move[5] && move[4] === move[5] && move[3] !== "" && move[4] !== "" && move[5] !== ""){
       clearInterval(stateChecker);
       document.getElementById('winner').style.display = 'block';
-      document.getElementById('winner').innerHTML = `Game End: Winner ${move[3]}`;
-      alert(`Game End: Winner ${move[3]}`);
       document.getElementById('quit').style.display = 'none';
       document.getElementById('reset').style.display = 'block';
+      document.getElementById('player-turn').innerHTML = `Game End: Winner ${move[3]}`;
+      document.getElementById('player-turn').style.marginTop = "200px";
+      document.getElementById('overlay').style.cursor = 'default';
+      document.getElementById('overlay').style.display = "block";
+      document.getElementById('player-wait').style.display = 'none';
     }
     else if(move[6] === move[7] && move[6] === move[8] && move[7] === move[8] && move[6] !== "" && move[7] !== "" && move[8] !== ""){
       clearInterval(stateChecker);
       document.getElementById('winner').style.display = 'block';
-      document.getElementById('winner').innerHTML = `Game End: Winner ${move[6]}`;
-      alert(`Game End: Winner ${move[6]}`);
       document.getElementById('quit').style.display = 'none';
       document.getElementById('reset').style.display = 'block';
+      document.getElementById('player-turn').innerHTML = `Game End: Winner ${move[6]}`;
+      document.getElementById('player-turn').style.marginTop = "200px";
+      document.getElementById('overlay').style.cursor = 'default';
+      document.getElementById('overlay').style.display = "block";
+      document.getElementById('player-wait').style.display = 'none';
     }
 
     // VERTICAL
     else if(move[0] === move[3] && move[0] === move[6] && move[3] === move[6] && move[0] !== "" && move[3] !== "" && move[6] !== ""){
       clearInterval(stateChecker);
       document.getElementById('winner').style.display = 'block';
-      document.getElementById('winner').innerHTML = `Game End: Winner ${move[0]}`;
-      alert(`Game End: Winner ${move[0]}`);
       document.getElementById('quit').style.display = 'none';
       document.getElementById('reset').style.display = 'block';
+      document.getElementById('player-turn').innerHTML = `Game End: Winner ${move[0]}`;
+      document.getElementById('player-turn').style.marginTop = "200px";
+      document.getElementById('overlay').style.cursor = 'default';
+      document.getElementById('overlay').style.display = "block";
+      document.getElementById('player-wait').style.display = 'none';
     }
     else if(move[1] === move[4] && move[1] === move[7] && move[4] === move[7] && move[1] !== "" && move[4] !== "" && move[7] !== ""){
       clearInterval(stateChecker);
       document.getElementById('winner').style.display = 'block';
-      document.getElementById('winner').innerHTML = `Game End: Winner ${move[1]}`;
-      alert(`Game End: Winner ${move[1]}`);
       document.getElementById('quit').style.display = 'none';
       document.getElementById('reset').style.display = 'block';
+      document.getElementById('player-turn').innerHTML = `Game End: Winner ${move[1]}`;
+      document.getElementById('player-turn').style.marginTop = "200px";
+      document.getElementById('overlay').style.cursor = 'default';
+      document.getElementById('overlay').style.display = "block";
+      document.getElementById('player-wait').style.display = 'none';
     }
     else if(move[2] === move[5] && move[2] === move[8] && move[5] === move[8] && move[2] !== "" && move[5] !== "" && move[8] !== ""){
       clearInterval(stateChecker);
       document.getElementById('winner').style.display = 'block';
-      document.getElementById('winner').innerHTML = `Game End: Winner ${move[2]}`;
-      alert(`Game End: Winner ${move[2]}`);
       document.getElementById('quit').style.display = 'none';
       document.getElementById('reset').style.display = 'block';
+      document.getElementById('player-turn').innerHTML = `Game End: Winner ${move[2]}`;
+      document.getElementById('player-turn').style.marginTop = "200px";
+      document.getElementById('overlay').style.cursor = 'default';
+      document.getElementById('overlay').style.display = "block";
+      document.getElementById('player-wait').style.display = 'none';
     }
 
     // DIAGONAL
     else if(move[0] === move[4] && move[0] === move[8] && move[4] === move[8] && move[0] !== "" && move[4] !== "" && move[8] !== ""){
       clearInterval(stateChecker);
       document.getElementById('winner').style.display = 'block';
-      document.getElementById('winner').innerHTML = `Game End: Winner ${move[0]}`;
-      alert(`Game End: Winner ${move[0]}`);
       document.getElementById('quit').style.display = 'none';
       document.getElementById('reset').style.display = 'block';
+      document.getElementById('player-turn').innerHTML = `Game End: Winner ${move[0]}`;
+      document.getElementById('player-turn').style.marginTop = "200px";
+      document.getElementById('overlay').style.cursor = 'default';
+      document.getElementById('overlay').style.display = "block";
+      document.getElementById('player-wait').style.display = 'none';
     }
     else if(move[2] === move[4] && move[2] === move[6] && move[4] === move[6] && move[2] !== "" && move[4] !== "" && move[6] !== ""){
       clearInterval(stateChecker);
       document.getElementById('winner').style.display = 'block';
-      document.getElementById('winner').innerHTML = `Game End: Winner ${move[2]}`;
-      alert(`Game End: Winner ${move[2]}`);
       document.getElementById('quit').style.display = 'none';
       document.getElementById('reset').style.display = 'block';
+      document.getElementById('player-turn').innerHTML = `Game End: Winner ${move[2]}`;
+      document.getElementById('player-turn').style.marginTop = "200px";
+      document.getElementById('overlay').style.cursor = 'default';
+      document.getElementById('overlay').style.display = "block";
+      document.getElementById('player-wait').style.display = 'none';
     }
 
     // DRAW
     else if(!move.includes("")){
       clearInterval(stateChecker);
       document.getElementById('winner').style.display = 'block';
-      document.getElementById('winner').innerHTML = `Game End: Game Draw`;
-      alert(`Game End: Game Draw`);
       document.getElementById('quit').style.display = 'none';
       document.getElementById('reset').style.display = 'block';
+      document.getElementById('player-turn').innerHTML = `Game End: Game Draw`;
+      
+        document.getElementById('overlay').style.cursor = 'default';document.getElementById('player-turn').style.marginTop = "200px";
+      document.getElementById('overlay').style.display = "block";
+      document.getElementById('player-wait').style.display = 'none';
+    }
+
+    // CHECK WHO'S TURN
+    else {
+      let count = 0;
+      move.forEach(tile => {
+        if(tile !== ""){
+          count++;
+        }
+      });
+
+      if(count % 2 !== 0 && playerMarker === "O"){
+        document.getElementById("overlay").style.display = "none";
+      } else if(count % 2 === 0 && playerMarker === "X"){
+        document.getElementById("overlay").style.display = "none";
+      }
     }
     
   }
@@ -152,56 +199,65 @@ document.addEventListener("DOMContentLoaded", function(event){
     const x = 0;
     const y = 0;
     tileMove(x, y);
-    document.getElementById('column').disabled = true;
+    document.getElementById('player-turn').innerHTML = 'Waiting for opponents turn...';
+    document.getElementById('overlay').style.display = "block";
   }
   boxTwo = () =>{
     const x = 1;
     const y = 0;
     tileMove(x, y);
-    document.getElementById('column').disabled = true;
+    document.getElementById('player-turn').innerHTML = 'Waiting for opponents turn...';
+    document.getElementById('overlay').style.display = "block";
   }
   boxThree = () =>{
     const x = 2;
     const y = 0;
     tileMove(x, y);
-    document.getElementById('column').disabled = true;
+    document.getElementById('player-turn').innerHTML = 'Waiting for opponents turn...';
+    document.getElementById('overlay').style.display = "block";
   }
   boxFour = () =>{
     const x = 0;
     const y = 1;
     tileMove(x, y);
-    document.getElementById('column').disabled = true;
+    document.getElementById('player-turn').innerHTML = 'Waiting for opponents turn...';
+    document.getElementById('overlay').style.display = "block";
   }
   boxFive = () =>{
     const x = 1;
     const y = 1;
     tileMove(x, y);
-    document.getElementById('column').disabled = true;
+    document.getElementById('player-turn').innerHTML = 'Waiting for opponents turn...';
+    document.getElementById('overlay').style.display = "block";
   }
   boxSix = () =>{
     const x = 2;
     const y = 1;
     tileMove(x, y);
-    document.getElementById('column').disabled = true;
+    document.getElementById('player-turn').innerHTML = 'Waiting for opponents turn...';
+    document.getElementById('overlay').style.display = "block";
   }
   boxSeven = () =>{
     const x = 0;
     const y = 2;
     tileMove(x, y);
-    document.getElementById('column').disabled = true;
+    document.getElementById('player-turn').innerHTML = 'Waiting for opponents turn...';
+    document.getElementById('overlay').style.display = "block";
   }
 
   boxEight = () =>{
     const x = 1;
     const y = 2;
     tileMove(x, y);
-    document.getElementById('column').disabled = true;
+    document.getElementById('player-turn').innerHTML = 'Waiting for opponents turn...';
+    document.getElementById('overlay').style.display = "block";
   }
   boxNine = () =>{
     const x = 2;
     const y = 2;
     tileMove(x, y);
-    document.getElementById('column').disabled = true;
+    document.getElementById('player-turn').innerHTML = 'Waiting for opponents turn...';
+    document.getElementById('overlay').style.display = "block";
   }
 
   quit = () =>{

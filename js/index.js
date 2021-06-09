@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
         xhr.onload = () =>{
             if(xhr.readyState == 4 && xhr.status == 200){
                 playerMarker = xhr.responseText;
-            alert("Welcome player! Your game marker is: " + playerMarker);
             window.location.href = `${window.origin}/gameLobby.html?id=` + gameID + `&playerMarker=` + playerMarker;
             } else {
                 alert("Can't connect to server. Please contact admin.");
@@ -51,7 +50,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
         xhr.onload = () =>{
             if(xhr.readyState == 4 && xhr.status == 200){
                 playerMarker = xhr.responseText;
-                alert("Welcome player! Your game marker is: " + playerMarker);
                 window.location.href = `${window.origin}/gameLobby.html?id=` + gameID + `&playerMarker=` + playerMarker;
             } else {
                 alert("Can't connect to server. Please contact admin.");
