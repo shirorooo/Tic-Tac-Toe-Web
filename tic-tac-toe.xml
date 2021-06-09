@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<service>
+    <id>tic-tac-toe</id>
+    <name>tic-tac-toe</name>
+    <description>tic-tac-toe game</description>
+    <executable>node</executable>
+    <arguments>server.js</arguments>
+    <logmode>rotate</logmode>
+</service>
