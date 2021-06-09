@@ -129,7 +129,7 @@ h1 {
   background-color: rgb(12, 99, 12);
 }
 
-#quit {
+.quit {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -146,7 +146,7 @@ h1 {
   -moz-box-shadow: -9px 13px 31px 4px rgba(0, 0, 0, 0.75);
 }
 
-#quit:hover {
+.quit:hover {
   cursor: pointer;
   background-color: rgb(137, 9, 9);
 }

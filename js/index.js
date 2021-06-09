@@ -50,7 +50,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
         xhr.onload = () =>{
             if(xhr.readyState == 4 && xhr.status == 200){
                 playerMarker = xhr.responseText;
-                window.location.href = `./gameLobby.html?id=` + gameID + `&playerMarker=` + playerMarker;
+                if(playerMarker !== "[GAME ALREADY STARTED]"){
+                    window.location.href = `./gameLobby.html?id=` + gameID + `&playerMarker=` + playerMarker;
+                } else if(playerMarker === "[GAME ALREADY STARTED]") {
+                    alert("Game already started. Redirecting to main page...");
+                    window.location.href = `./index.html`;
+                }
             } else {
                 alert("Can't connect to server. Please contact admin.");
             }

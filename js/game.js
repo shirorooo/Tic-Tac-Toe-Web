@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function(event){
   document.getElementById('winner').style.display = 'none';
   if(playerMarker === "O"){
     document.getElementById('overlay').style.display = "block";
+    document.getElementById('quit').style.display = 'none';
   }
 
   document.getElementById('player-marker').innerHTML = `Your marker is: ${playerMarker}`
@@ -65,6 +66,7 @@ document.addEventListener("DOMContentLoaded", function(event){
       document.getElementById('player-turn').style.marginTop = "200px";
       document.getElementById('overlay').style.cursor = 'default';
       document.getElementById('overlay').style.display = "block";
+      document.getElementById('quit-overlay').style.display = 'none';
       document.getElementById('player-wait').style.display = 'none';
     }
     else if(move[3] === move[4] && move[3] === move[5] && move[4] === move[5] && move[3] !== "" && move[4] !== "" && move[5] !== ""){
@@ -76,6 +78,7 @@ document.addEventListener("DOMContentLoaded", function(event){
       document.getElementById('player-turn').style.marginTop = "200px";
       document.getElementById('overlay').style.cursor = 'default';
       document.getElementById('overlay').style.display = "block";
+      document.getElementById('quit-overlay').style.display = 'none';
       document.getElementById('player-wait').style.display = 'none';
     }
     else if(move[6] === move[7] && move[6] === move[8] && move[7] === move[8] && move[6] !== "" && move[7] !== "" && move[8] !== ""){
@@ -87,6 +90,7 @@ document.addEventListener("DOMContentLoaded", function(event){
       document.getElementById('player-turn').style.marginTop = "200px";
       document.getElementById('overlay').style.cursor = 'default';
       document.getElementById('overlay').style.display = "block";
+      document.getElementById('quit-overlay').style.display = 'none';
       document.getElementById('player-wait').style.display = 'none';
     }
 
@@ -100,6 +104,7 @@ document.addEventListener("DOMContentLoaded", function(event){
       document.getElementById('player-turn').style.marginTop = "200px";
       document.getElementById('overlay').style.cursor = 'default';
       document.getElementById('overlay').style.display = "block";
+      document.getElementById('quit-overlay').style.display = 'none';
       document.getElementById('player-wait').style.display = 'none';
     }
     else if(move[1] === move[4] && move[1] === move[7] && move[4] === move[7] && move[1] !== "" && move[4] !== "" && move[7] !== ""){
@@ -111,6 +116,7 @@ document.addEventListener("DOMContentLoaded", function(event){
       document.getElementById('player-turn').style.marginTop = "200px";
       document.getElementById('overlay').style.cursor = 'default';
       document.getElementById('overlay').style.display = "block";
+      document.getElementById('quit-overlay').style.display = 'none';
       document.getElementById('player-wait').style.display = 'none';
     }
     else if(move[2] === move[5] && move[2] === move[8] && move[5] === move[8] && move[2] !== "" && move[5] !== "" && move[8] !== ""){
@@ -122,6 +128,7 @@ document.addEventListener("DOMContentLoaded", function(event){
       document.getElementById('player-turn').style.marginTop = "200px";
       document.getElementById('overlay').style.cursor = 'default';
       document.getElementById('overlay').style.display = "block";
+      document.getElementById('quit-overlay').style.display = 'none';
       document.getElementById('player-wait').style.display = 'none';
     }
 
@@ -135,6 +142,7 @@ document.addEventListener("DOMContentLoaded", function(event){
       document.getElementById('player-turn').style.marginTop = "200px";
       document.getElementById('overlay').style.cursor = 'default';
       document.getElementById('overlay').style.display = "block";
+      document.getElementById('quit-overlay').style.display = 'none';
       document.getElementById('player-wait').style.display = 'none';
     }
     else if(move[2] === move[4] && move[2] === move[6] && move[4] === move[6] && move[2] !== "" && move[4] !== "" && move[6] !== ""){
@@ -146,6 +154,7 @@ document.addEventListener("DOMContentLoaded", function(event){
       document.getElementById('player-turn').style.marginTop = "200px";
       document.getElementById('overlay').style.cursor = 'default';
       document.getElementById('overlay').style.display = "block";
+      document.getElementById('quit-overlay').style.display = 'none';
       document.getElementById('player-wait').style.display = 'none';
     }
 
@@ -159,6 +168,7 @@ document.addEventListener("DOMContentLoaded", function(event){
       
         document.getElementById('overlay').style.cursor = 'default';document.getElementById('player-turn').style.marginTop = "200px";
       document.getElementById('overlay').style.display = "block";
+      document.getElementById('quit-overlay').style.display = 'none';
       document.getElementById('player-wait').style.display = 'none';
     }
 
@@ -173,8 +183,10 @@ document.addEventListener("DOMContentLoaded", function(event){
 
       if(count % 2 !== 0 && playerMarker === "O"){
         document.getElementById("overlay").style.display = "none";
+        document.getElementById("quit").style.display = "block";
       } else if(count % 2 === 0 && playerMarker === "X"){
         document.getElementById("overlay").style.display = "none";
+        document.getElementById("quit").style.display = "block";
       }
     }
     
@@ -201,6 +213,7 @@ document.addEventListener("DOMContentLoaded", function(event){
     tileMove(x, y);
     document.getElementById('player-turn').innerHTML = 'Waiting for opponents turn...';
     document.getElementById('overlay').style.display = "block";
+    document.getElementById('quit').style.display = 'none';
   }
   boxTwo = () =>{
     const x = 1;
@@ -208,6 +221,7 @@ document.addEventListener("DOMContentLoaded", function(event){
     tileMove(x, y);
     document.getElementById('player-turn').innerHTML = 'Waiting for opponents turn...';
     document.getElementById('overlay').style.display = "block";
+    document.getElementById('quit').style.display = 'none';
   }
   boxThree = () =>{
     const x = 2;
@@ -215,6 +229,7 @@ document.addEventListener("DOMContentLoaded", function(event){
     tileMove(x, y);
     document.getElementById('player-turn').innerHTML = 'Waiting for opponents turn...';
     document.getElementById('overlay').style.display = "block";
+    document.getElementById('quit').style.display = 'none';
   }
   boxFour = () =>{
     const x = 0;
@@ -222,6 +237,7 @@ document.addEventListener("DOMContentLoaded", function(event){
     tileMove(x, y);
     document.getElementById('player-turn').innerHTML = 'Waiting for opponents turn...';
     document.getElementById('overlay').style.display = "block";
+    document.getElementById('quit').style.display = 'none';
   }
   boxFive = () =>{
     const x = 1;
@@ -229,6 +245,7 @@ document.addEventListener("DOMContentLoaded", function(event){
     tileMove(x, y);
     document.getElementById('player-turn').innerHTML = 'Waiting for opponents turn...';
     document.getElementById('overlay').style.display = "block";
+    document.getElementById('quit').style.display = 'none';
   }
   boxSix = () =>{
     const x = 2;
@@ -236,6 +253,7 @@ document.addEventListener("DOMContentLoaded", function(event){
     tileMove(x, y);
     document.getElementById('player-turn').innerHTML = 'Waiting for opponents turn...';
     document.getElementById('overlay').style.display = "block";
+    document.getElementById('quit').style.display = 'none';
   }
   boxSeven = () =>{
     const x = 0;
@@ -243,6 +261,7 @@ document.addEventListener("DOMContentLoaded", function(event){
     tileMove(x, y);
     document.getElementById('player-turn').innerHTML = 'Waiting for opponents turn...';
     document.getElementById('overlay').style.display = "block";
+    document.getElementById('quit').style.display = 'none';
   }
 
   boxEight = () =>{
@@ -251,6 +270,7 @@ document.addEventListener("DOMContentLoaded", function(event){
     tileMove(x, y);
     document.getElementById('player-turn').innerHTML = 'Waiting for opponents turn...';
     document.getElementById('overlay').style.display = "block";
+    document.getElementById('quit').style.display = 'none';
   }
   boxNine = () =>{
     const x = 2;
@@ -258,6 +278,7 @@ document.addEventListener("DOMContentLoaded", function(event){
     tileMove(x, y);
     document.getElementById('player-turn').innerHTML = 'Waiting for opponents turn...';
     document.getElementById('overlay').style.display = "block";
+    document.getElementById('quit').style.display = 'none';
   }
 
   quit = () =>{
