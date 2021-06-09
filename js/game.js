@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function(event){
       if(move[0] === "[GAME NOT YET STARTED]"){
         clearInterval();
         alert("Game was ended. Redirecting to game lobby...");
-        window.location.href = `${window.origin}/index.html`;
+        window.location.href = `./index.html`;
       } else {
         document.getElementById('box1').innerHTML = move[0];
         document.getElementById('box2').innerHTML = move[1];
@@ -266,7 +266,7 @@ document.addEventListener("DOMContentLoaded", function(event){
 
     xhr.onload = () =>{
       clearInterval();
-      window.location.href = `${window.origin}/index.html`;
+      window.location.href = `./index.html`;
     }
 
     xhr.send();

@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             if(xhr.readyState == 4 && xhr.status == 200){
                 if(xhr.responseText == "true"){
                 clearInterval(playerChecker);
-                window.location.href = `${window.origin}/game.html?id=` + gameID + `&playerMarker=` + playerMarker;
+                window.location.href = `./game.html?id=` + gameID + `&playerMarker=` + playerMarker;
                 }
             } else {
                 alert("Can't connect to server. Please contact admin.");

@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         xhr.onload = () =>{
             if(xhr.readyState == 4 && xhr.status == 200){
                 playerMarker = xhr.responseText;
-            window.location.href = `${window.origin}/gameLobby.html?id=` + gameID + `&playerMarker=` + playerMarker;
+            window.location.href = `./gameLobby.html?id=` + gameID + `&playerMarker=` + playerMarker;
             } else {
                 alert("Can't connect to server. Please contact admin.");
             }
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         xhr.onload = () =>{
             if(xhr.readyState == 4 && xhr.status == 200){
                 playerMarker = xhr.responseText;
-                window.location.href = `${window.origin}/gameLobby.html?id=` + gameID + `&playerMarker=` + playerMarker;
+                window.location.href = `./gameLobby.html?id=` + gameID + `&playerMarker=` + playerMarker;
             } else {
                 alert("Can't connect to server. Please contact admin.");
             }
