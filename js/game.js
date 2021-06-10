@@ -300,16 +300,12 @@ document.addEventListener("DOMContentLoaded", function(event){
 
   // RESET BUTTON
   resetGame = () =>{
-    reset();
-    setTimeout(() =>{
-      newTable();
-    }, 2000);
-  }
-
-  reset = () =>{
     let xhr = new XMLHttpRequest;
     xhr.open('GET', 'http://184.72.178.43:8080/TicTacToeServer/tictactoeserver/reset?key=' + gameID, true);
     xhr.send();
+    setTimeout(() =>{
+      newTable();
+    }, 2000);
   }
 
   newTable = () =>{
