@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }
 
     // EXIT BUTTON
-    returnLobby = () =>{
+    returnMain = () =>{
         document.getElementsByClassName('join-lobby')[0].style.display = 'none';
         document.getElementsByClassName('create-game')[0].style.display = 'flex';
     }
