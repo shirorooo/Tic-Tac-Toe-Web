@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function(event){
 
     xhr.onload = () =>{
 
-      let move = [xhr.responseText.split(":")[0],
+       let move = [xhr.responseText.split(":")[0],
        xhr.responseText.split(":")[1],
        xhr.responseText.split(":")[2],
        xhr.responseText.split(":")[3],
@@ -33,7 +33,8 @@ document.addEventListener("DOMContentLoaded", function(event){
     ];
 
       if(move[0] === "[GAME NOT YET STARTED]"){
-        clearInterval();
+        clearInterval(stateChecker);
+        checkReset();
         alert("Game was ended. Redirecting to game lobby...");
         window.location.href = `./index.html`;
       } else {
@@ -58,7 +59,6 @@ document.addEventListener("DOMContentLoaded", function(event){
   checkGameEnding = (move) =>{
     //HORIZONTAL
     if(move[0] === move[1] && move[0] === move[2] && move[1] === move[2] && move[0] !== "" && move[1] !== "" && move[2] !== ""){
-      clearInterval(stateChecker);
       document.getElementById('winner').style.display = 'block';
       document.getElementById('quit').style.display = 'none';
       document.getElementById('reset').style.display = 'block';
@@ -66,11 +66,11 @@ document.addEventListener("DOMContentLoaded", function(event){
       document.getElementById('player-turn').style.marginTop = "200px";
       document.getElementById('overlay').style.cursor = 'default';
       document.getElementById('overlay').style.display = "block";
-      document.getElementById('quit-overlay').style.display = 'none';
       document.getElementById('player-wait').style.display = 'none';
+      clearInterval(stateChecker);
+      checkReset();
     }
     else if(move[3] === move[4] && move[3] === move[5] && move[4] === move[5] && move[3] !== "" && move[4] !== "" && move[5] !== ""){
-      clearInterval(stateChecker);
       document.getElementById('winner').style.display = 'block';
       document.getElementById('quit').style.display = 'none';
       document.getElementById('reset').style.display = 'block';
@@ -78,11 +78,11 @@ document.addEventListener("DOMContentLoaded", function(event){
       document.getElementById('player-turn').style.marginTop = "200px";
       document.getElementById('overlay').style.cursor = 'default';
       document.getElementById('overlay').style.display = "block";
-      document.getElementById('quit-overlay').style.display = 'none';
       document.getElementById('player-wait').style.display = 'none';
+      clearInterval(stateChecker);
+      checkReset();
     }
     else if(move[6] === move[7] && move[6] === move[8] && move[7] === move[8] && move[6] !== "" && move[7] !== "" && move[8] !== ""){
-      clearInterval(stateChecker);
       document.getElementById('winner').style.display = 'block';
       document.getElementById('quit').style.display = 'none';
       document.getElementById('reset').style.display = 'block';
@@ -90,13 +90,13 @@ document.addEventListener("DOMContentLoaded", function(event){
       document.getElementById('player-turn').style.marginTop = "200px";
       document.getElementById('overlay').style.cursor = 'default';
       document.getElementById('overlay').style.display = "block";
-      document.getElementById('quit-overlay').style.display = 'none';
       document.getElementById('player-wait').style.display = 'none';
+      clearInterval(stateChecker);
+      checkReset();
     }
 
     // VERTICAL
     else if(move[0] === move[3] && move[0] === move[6] && move[3] === move[6] && move[0] !== "" && move[3] !== "" && move[6] !== ""){
-      clearInterval(stateChecker);
       document.getElementById('winner').style.display = 'block';
       document.getElementById('quit').style.display = 'none';
       document.getElementById('reset').style.display = 'block';
@@ -104,11 +104,11 @@ document.addEventListener("DOMContentLoaded", function(event){
       document.getElementById('player-turn').style.marginTop = "200px";
       document.getElementById('overlay').style.cursor = 'default';
       document.getElementById('overlay').style.display = "block";
-      document.getElementById('quit-overlay').style.display = 'none';
       document.getElementById('player-wait').style.display = 'none';
+      clearInterval(stateChecker);
+      checkReset();
     }
     else if(move[1] === move[4] && move[1] === move[7] && move[4] === move[7] && move[1] !== "" && move[4] !== "" && move[7] !== ""){
-      clearInterval(stateChecker);
       document.getElementById('winner').style.display = 'block';
       document.getElementById('quit').style.display = 'none';
       document.getElementById('reset').style.display = 'block';
@@ -116,11 +116,11 @@ document.addEventListener("DOMContentLoaded", function(event){
       document.getElementById('player-turn').style.marginTop = "200px";
       document.getElementById('overlay').style.cursor = 'default';
       document.getElementById('overlay').style.display = "block";
-      document.getElementById('quit-overlay').style.display = 'none';
       document.getElementById('player-wait').style.display = 'none';
+      clearInterval(stateChecker);
+      checkReset();
     }
     else if(move[2] === move[5] && move[2] === move[8] && move[5] === move[8] && move[2] !== "" && move[5] !== "" && move[8] !== ""){
-      clearInterval(stateChecker);
       document.getElementById('winner').style.display = 'block';
       document.getElementById('quit').style.display = 'none';
       document.getElementById('reset').style.display = 'block';
@@ -128,13 +128,13 @@ document.addEventListener("DOMContentLoaded", function(event){
       document.getElementById('player-turn').style.marginTop = "200px";
       document.getElementById('overlay').style.cursor = 'default';
       document.getElementById('overlay').style.display = "block";
-      document.getElementById('quit-overlay').style.display = 'none';
       document.getElementById('player-wait').style.display = 'none';
+      clearInterval(stateChecker);
+      checkReset();
     }
 
     // DIAGONAL
     else if(move[0] === move[4] && move[0] === move[8] && move[4] === move[8] && move[0] !== "" && move[4] !== "" && move[8] !== ""){
-      clearInterval(stateChecker);
       document.getElementById('winner').style.display = 'block';
       document.getElementById('quit').style.display = 'none';
       document.getElementById('reset').style.display = 'block';
@@ -142,11 +142,11 @@ document.addEventListener("DOMContentLoaded", function(event){
       document.getElementById('player-turn').style.marginTop = "200px";
       document.getElementById('overlay').style.cursor = 'default';
       document.getElementById('overlay').style.display = "block";
-      document.getElementById('quit-overlay').style.display = 'none';
       document.getElementById('player-wait').style.display = 'none';
+      clearInterval(stateChecker);
+      checkReset();
     }
     else if(move[2] === move[4] && move[2] === move[6] && move[4] === move[6] && move[2] !== "" && move[4] !== "" && move[6] !== ""){
-      clearInterval(stateChecker);
       document.getElementById('winner').style.display = 'block';
       document.getElementById('quit').style.display = 'none';
       document.getElementById('reset').style.display = 'block';
@@ -154,22 +154,23 @@ document.addEventListener("DOMContentLoaded", function(event){
       document.getElementById('player-turn').style.marginTop = "200px";
       document.getElementById('overlay').style.cursor = 'default';
       document.getElementById('overlay').style.display = "block";
-      document.getElementById('quit-overlay').style.display = 'none';
       document.getElementById('player-wait').style.display = 'none';
+      clearInterval(stateChecker);
+      checkReset();
     }
 
     // DRAW
     else if(!move.includes("")){
-      clearInterval(stateChecker);
       document.getElementById('winner').style.display = 'block';
       document.getElementById('quit').style.display = 'none';
       document.getElementById('reset').style.display = 'block';
       document.getElementById('player-turn').innerHTML = `Game End: Game Draw`;
-      
-        document.getElementById('overlay').style.cursor = 'default';document.getElementById('player-turn').style.marginTop = "200px";
+      document.getElementById('overlay').style.cursor = 'default';
+      document.getElementById('player-turn').style.marginTop = "200px";
       document.getElementById('overlay').style.display = "block";
-      document.getElementById('quit-overlay').style.display = 'none';
       document.getElementById('player-wait').style.display = 'none';
+      clearInterval(stateChecker);
+      checkReset();
     }
 
     // CHECK WHO'S TURN
@@ -286,10 +287,54 @@ document.addEventListener("DOMContentLoaded", function(event){
     xhr.open('GET', 'http://184.72.178.43:8080/TicTacToeServer/tictactoeserver/reset?key=' + gameID, true);
 
     xhr.onload = () =>{
-      clearInterval();
+      clearInterval(stateChecker);
+      checkReset();
       window.location.href = `./index.html`;
     }
 
     xhr.send();
+  }
+
+  resetGame = () =>{
+    reset();
+    setTimeout(() =>{
+      newTable();
+    }, 2000);
+  }
+
+  newTable = () =>{
+    let xhr = new XMLHttpRequest;
+    xhr.open("GET", "http://184.72.178.43:8080/TicTacToeServer/tictactoeserver/createGame?key=" + gameID);
+    xhr.onload = () =>{
+      marker = xhr.responseText;
+      window.location.href = `./gameLobby.html?id=` + gameID + `&playerMarker=` + marker;
+    }
+    xhr.send();
+  }
+
+  reset = () =>{
+    let xhr = new XMLHttpRequest;
+    xhr.open('GET', 'http://184.72.178.43:8080/TicTacToeServer/tictactoeserver/reset?key=' + gameID, true);
+    xhr.send();
+  }
+
+  checkReset = () =>{
+    let resetChecker = "";
+    setInterval(() =>{
+      let xhr = new XMLHttpRequest;
+      
+
+      xhr.open('GET', 'http://184.72.178.43:8080/TicTacToeServer/tictactoeserver/check?key=' + gameID, true);
+      xhr.onload = () =>{
+        resetChecker = xhr.responseText;
+      }
+      xhr.send();
+
+      if(resetChecker === 'false'){
+        alert("The game is restarted. The game will restart soon...");
+        newTable();
+      }
+
+    }, 3000);
   }
 });
