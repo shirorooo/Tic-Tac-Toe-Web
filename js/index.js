@@ -43,13 +43,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
         xhr.open("GET", "http://184.72.178.43:8080/TicTacToeServer/tictactoeserver/createGame?key=" + gameID, true);
 
         xhr.onload = () =>{
-            playerMarker = xhr.responseText;
-            if(playerMarker !== "[GAME ALREADY STARTED]"){
-                window.location.href = `./gameLobby.html?id=` + gameID + `&playerMarker=` + playerMarker;
-            }
-            else if(playerMarker === "[GAME ALREADY STARTED]") {
-                alert("Game already started. Redirecting to main page...");
-                window.location.href = `./index.html`;
+            if(document.getElementById('join-game').value === ""){
+                document.getElementById('alert').style.display = 'block';
+            } else {
+                playerMarker = xhr.responseText;
+                if(playerMarker !== "[GAME ALREADY STARTED]"){
+                    window.location.href = `./gameLobby.html?id=` + gameID + `&playerMarker=` + playerMarker;
+                }
+                else if(playerMarker === "[GAME ALREADY STARTED]") {
+                    window.location.href = `./index.html`;
+                }
             }
         }
         xhr.send();

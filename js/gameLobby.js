@@ -32,4 +32,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
         gameWait++;
     }, 2000);
 
+    // QUIT BUTTON
+    quit = () =>{
+        let xhr = new XMLHttpRequest;
+        xhr.open('GET', 'http://184.72.178.43:8080/TicTacToeServer/tictactoeserver/reset?key=' + gameID, true);
+        xhr.send();
+        window.location.href = `./index.html`;
+    }
+
 });

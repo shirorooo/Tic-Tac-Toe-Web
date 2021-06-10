@@ -41,9 +41,7 @@ document.addEventListener("DOMContentLoaded", function(event){
       ];
 
         if(move[0] === "[GAME NOT YET STARTED]"){
-          clearInterval(stateChecker);
-          checkReset();
-          window.location.href = `./index.html`;
+          resetGame();
         } else {
           document.getElementById('box1').innerHTML = move[0];
           document.getElementById('box2').innerHTML = move[1];
@@ -219,85 +217,85 @@ document.addEventListener("DOMContentLoaded", function(event){
   }
 
   boxOne = () =>{
+    document.getElementById('overlay').style.display = "block";
     gameWait = 0;
     const x = 0;
     const y = 0;
     tileMove(x, y);
     document.getElementById('player-turn').innerHTML = 'Waiting for opponents turn...';
-    document.getElementById('overlay').style.display = "block";
     document.getElementById('quit').style.display = 'none';
   }
   boxTwo = () =>{
+    document.getElementById('overlay').style.display = "block";
     gameWait = 0;
     const x = 1;
     const y = 0;
     tileMove(x, y);
     document.getElementById('player-turn').innerHTML = 'Waiting for opponents turn...';
-    document.getElementById('overlay').style.display = "block";
     document.getElementById('quit').style.display = 'none';
   }
   boxThree = () =>{
+    document.getElementById('overlay').style.display = "block";
     gameWait = 0;
     const x = 2;
     const y = 0;
     tileMove(x, y);
     document.getElementById('player-turn').innerHTML = 'Waiting for opponents turn...';
-    document.getElementById('overlay').style.display = "block";
     document.getElementById('quit').style.display = 'none';
   }
   boxFour = () =>{
+    document.getElementById('overlay').style.display = "block";
     gameWait = 0;
     const x = 0;
     const y = 1;
     tileMove(x, y);
     document.getElementById('player-turn').innerHTML = 'Waiting for opponents turn...';
-    document.getElementById('overlay').style.display = "block";
     document.getElementById('quit').style.display = 'none';
   }
   boxFive = () =>{
+    document.getElementById('overlay').style.display = "block";
     gameWait = 0;
     const x = 1;
     const y = 1;
     tileMove(x, y);
     document.getElementById('player-turn').innerHTML = 'Waiting for opponents turn...';
-    document.getElementById('overlay').style.display = "block";
     document.getElementById('quit').style.display = 'none';
   }
   boxSix = () =>{
+    document.getElementById('overlay').style.display = "block";
     gameWait = 0;
     const x = 2;
     const y = 1;
     tileMove(x, y);
     document.getElementById('player-turn').innerHTML = 'Waiting for opponents turn...';
-    document.getElementById('overlay').style.display = "block";
     document.getElementById('quit').style.display = 'none';
   }
   boxSeven = () =>{
+    document.getElementById('overlay').style.display = "block";
     gameWait = 0;
     const x = 0;
     const y = 2;
     tileMove(x, y);
     document.getElementById('player-turn').innerHTML = 'Waiting for opponents turn...';
-    document.getElementById('overlay').style.display = "block";
     document.getElementById('quit').style.display = 'none';
   }
 
   boxEight = () =>{
+    document.getElementById('overlay').style.display = "block";
     gameWait = 0;
     const x = 1;
     const y = 2;
     tileMove(x, y);
     document.getElementById('player-turn').innerHTML = 'Waiting for opponents turn...';
-    document.getElementById('overlay').style.display = "block";
     document.getElementById('quit').style.display = 'none';
   }
   boxNine = () =>{
+    document.getElementById('overlay').style.display = "block";
     gameWait = 0;
     const x = 2;
     const y = 2;
     tileMove(x, y);
     document.getElementById('player-turn').innerHTML = 'Waiting for opponents turn...';
-    document.getElementById('overlay').style.display = "block";
     document.getElementById('quit').style.display = 'none';
   }
 
@@ -340,15 +338,14 @@ document.addEventListener("DOMContentLoaded", function(event){
     let resetChecker = "";
     setInterval(() =>{
       let xhr = new XMLHttpRequest;
-
       xhr.open('GET', 'http://184.72.178.43:8080/TicTacToeServer/tictactoeserver/check?key=' + gameID, true);
       xhr.onload = () =>{
         resetChecker = xhr.responseText;
       }
       xhr.send();
-
       if(resetChecker === 'false'){
         document.getElementById('reset').style.display = 'none';
+        document.getElementById('quit').style.display = 'none';
         newTable();
       }
     }, 1000);
