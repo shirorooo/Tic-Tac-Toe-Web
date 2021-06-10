@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function(event){
 
   document.getElementById('player-marker').innerHTML = `Your marker is: ${playerMarker}`
 
+  // CHECK THE BOARD EVERY 3 SEC
   const stateChecker =  setInterval(() => {
     let xhr = new XMLHttpRequest;
     xhr.open('GET', 'http://184.72.178.43:8080/TicTacToeServer/tictactoeserver/board?key=' + gameID, true);
@@ -176,6 +177,7 @@ document.addEventListener("DOMContentLoaded", function(event){
     // CHECK WHO'S TURN
     else {
       let count = 0;
+
       move.forEach(tile => {
         if(tile !== ""){
           count++;
@@ -282,6 +284,7 @@ document.addEventListener("DOMContentLoaded", function(event){
     document.getElementById('quit').style.display = 'none';
   }
 
+  // QUIT BUTTON
   quit = () =>{
     let xhr = new XMLHttpRequest;
     xhr.open('GET', 'http://184.72.178.43:8080/TicTacToeServer/tictactoeserver/reset?key=' + gameID, true);
@@ -295,11 +298,18 @@ document.addEventListener("DOMContentLoaded", function(event){
     xhr.send();
   }
 
+  // RESET BUTTON
   resetGame = () =>{
     reset();
     setTimeout(() =>{
       newTable();
     }, 2000);
+  }
+
+  reset = () =>{
+    let xhr = new XMLHttpRequest;
+    xhr.open('GET', 'http://184.72.178.43:8080/TicTacToeServer/tictactoeserver/reset?key=' + gameID, true);
+    xhr.send();
   }
 
   newTable = () =>{
@@ -312,17 +322,11 @@ document.addEventListener("DOMContentLoaded", function(event){
     xhr.send();
   }
 
-  reset = () =>{
-    let xhr = new XMLHttpRequest;
-    xhr.open('GET', 'http://184.72.178.43:8080/TicTacToeServer/tictactoeserver/reset?key=' + gameID, true);
-    xhr.send();
-  }
-
+  // WILL CHECK IF THE GAME WAS RESET
   checkReset = () =>{
     let resetChecker = "";
     setInterval(() =>{
       let xhr = new XMLHttpRequest;
-      
 
       xhr.open('GET', 'http://184.72.178.43:8080/TicTacToeServer/tictactoeserver/check?key=' + gameID, true);
       xhr.onload = () =>{
@@ -334,7 +338,6 @@ document.addEventListener("DOMContentLoaded", function(event){
         alert("The game is restarted. The game will restart soon...");
         newTable();
       }
-
     }, 3000);
   }
 });

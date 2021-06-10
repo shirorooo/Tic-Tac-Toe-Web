@@ -57,6 +57,10 @@ img {
 
 @media screen and (max-width: 992px) {
   .container {
-    width: 400px;
+    width: 300px;
+  }
+
+  #playerMarker {
+    font-size: 20px;
   }
 }
