@@ -11,6 +11,13 @@
     <link rel="stylesheet" href="./css/game-style.css" />
   </head>
   <body>
+    <div class="overlay" id="overlay">
+      <img src="./css/img/Spin-1s-200px.png" alt="" id="player-wait" />
+      <p id="player-turn">Waiting for opponents turn...</p>
+      <button id="reset" onclick="resetGame()">Reset Game</button>
+      <button class="quit" id="quit-overlay" onclick="quit()">Quit Game</button>
+    </div>
+
     <h1 id="title">Tic-Tac-Toe</h1>
 
     <div class="game">
@@ -19,48 +26,36 @@
           <!-- GAME TABLE -->
           <div class="game-table">
             <div class="container">
-              <div id="overlay">
-                <img
-                  src="./css/img/Spin-1s-200px.png"
-                  alt=""
-                  id="player-wait"
-                />
-                <p id="player-turn">Waiting for opponents turn...</p>
-                <button id="reset" onclick="resetGame()">Reset Game</button>
-                <button class="quit" id="quit-overlay" onclick="quit()">
-                  Quit Game
-                </button>
-              </div>
               <div class="row">
-                <div id="column" onclick="boxOne()">
+                <div id="column" onclick="boxMove(0, 0)">
                   <h3 class="tile" id="box1"></h3>
                 </div>
-                <div id="column" onclick="boxTwo()">
+                <div id="column" onclick="boxMove(1, 0)">
                   <h3 class="tile" id="box2"></h3>
                 </div>
-                <div id="column" onclick="boxThree()">
+                <div id="column" onclick="boxMove(2, 0)">
                   <h3 class="tile" id="box3"></h3>
                 </div>
               </div>
               <div class="row">
-                <div id="column" onclick="boxFour()">
+                <div id="column" onclick="boxMove(0, 1)">
                   <h3 class="tile" id="box4"></h3>
                 </div>
-                <div id="column" onclick="boxFive()">
+                <div id="column" onclick="boxMove(1, 1)">
                   <h3 class="tile" id="box5"></h3>
                 </div>
-                <div id="column" onclick="boxSix()">
+                <div id="column" onclick="boxMove(2, 1)">
                   <h3 class="tile" id="box6"></h3>
                 </div>
               </div>
               <div class="row">
-                <div id="column" onclick="boxSeven()">
+                <div id="column" onclick="boxMove(0, 2)">
                   <h3 class="tile" id="box7"></h3>
                 </div>
-                <div id="column" onclick="boxEight()">
+                <div id="column" onclick="boxMove(1, 2)">
                   <h3 class="tile" id="box8"></h3>
                 </div>
-                <div id="column" onclick="boxNine()">
+                <div id="column" onclick="boxMove(2, 2)">
                   <h3 class="tile" id="box9"></h3>
                 </div>
               </div>

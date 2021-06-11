@@ -44,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
         xhr.onload = () =>{
             if(document.getElementById('join-game').value === ""){
+                document.getElementById('alert').innerHTML = "Don't leave the field blank.";
                 document.getElementById('alert').style.display = 'block';
             } else {
                 playerMarker = xhr.responseText;
@@ -51,7 +52,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
                     window.location.href = `./gameLobby.html?id=` + gameID + `&playerMarker=` + playerMarker;
                 }
                 else if(playerMarker === "[GAME ALREADY STARTED]") {
-                    window.location.href = `./index.html`;
+                    document.getElementById('alert').innerHTML = 'Game already started';
+                    document.getElementById('alert').style.display = 'block';
                 }
             }
         }
