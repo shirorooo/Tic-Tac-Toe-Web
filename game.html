@@ -9,13 +9,21 @@
     <link rel="icon" href="./css/img/Logo-Header.ico" type="image/x-icon" />
 
     <link rel="stylesheet" href="./css/game-style.css" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
     <div class="overlay" id="overlay">
+      <button class="quit-overlay" id="quit-overlay" onclick="quit()">
+        <i class="fas fa-sign-out-alt"></i>
+      </button>
       <img src="./css/img/Spin-1s-200px.png" alt="" id="player-wait" />
       <p id="player-turn">Waiting for opponents turn...</p>
       <button id="reset" onclick="resetGame()">Reset Game</button>
-      <button class="quit" id="quit-overlay" onclick="quit()">Quit Game</button>
     </div>
 
     <h1 id="title">Tic-Tac-Toe</h1>
@@ -69,7 +77,6 @@
               <p id="winner"></p>
             </div>
             <div class="game-button">
-              <!-- <button id="reset" onclick="quit()">Reset Game</button> -->
               <button class="quit" id="quit" onclick="quit()">Quit Game</button>
             </div>
           </div>

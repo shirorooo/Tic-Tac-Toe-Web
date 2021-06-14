@@ -18,6 +18,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
         xhr.onload = () =>{
             playerMarker = xhr.responseText;
+            window.sessionStorage.setItem('player', playerMarker);
+            window.sessionStorage.setItem('id', gameID);
             window.location.href = `./gameLobby.html?id=` + gameID + `&playerMarker=` + playerMarker;
         }
         xhr.send();
@@ -33,31 +35,33 @@ document.addEventListener("DOMContentLoaded", function(event) {
     returnMain = () =>{
         document.getElementsByClassName('join-lobby')[0].style.display = 'none';
         document.getElementsByClassName('create-game')[0].style.display = 'flex';
+        document.getElementById('alert').style.display = 'none';
     }
 
     // JOIN GAME BUTTON
     joinGame = () =>{
         let gameID = document.getElementById('join-game').value;
-        // --------------------------------------HTTP REQUEST--------------------------------------
-        let xhr = new XMLHttpRequest;
-        xhr.open("GET", "http://184.72.178.43:8080/TicTacToeServer/tictactoeserver/createGame?key=" + gameID, true);
 
-        xhr.onload = () =>{
-            if(document.getElementById('join-game').value === ""){
-                document.getElementById('alert').innerHTML = "Don't leave the field blank.";
-                document.getElementById('alert').style.display = 'block';
-            } else {
-                playerMarker = xhr.responseText;
-                if(playerMarker !== "[GAME ALREADY STARTED]"){
-                    window.location.href = `./gameLobby.html?id=` + gameID + `&playerMarker=` + playerMarker;
-                }
-                else if(playerMarker === "[GAME ALREADY STARTED]") {
-                    document.getElementById('alert').innerHTML = 'Game already started';
-                    document.getElementById('alert').style.display = 'block';
-                }
+        if(gameID === ""){
+            document.getElementById('alert').innerHTML = "Don't leave the field blank.";
+            document.getElementById('alert').style.display = "block";
+        } else {
+            let xhr = new XMLHttpRequest;
+            xhr.open("GET", "http://184.72.178.43:8080/TicTacToeServer/tictactoeserver/createGame?key=" + gameID, true);
+
+            xhr.onload = () =>{
+                    playerMarker = xhr.responseText;
+                    if(playerMarker !== "[GAME ALREADY STARTED]"){
+                        window.sessionStorage.setItem('player', playerMarker);
+                        window.sessionStorage.setItem('id', gameID);
+                        window.location.href = `./gameLobby.html?id=` + gameID + `&playerMarker=` + playerMarker;
+                    }
+                    else if(playerMarker === "[GAME ALREADY STARTED]") {
+                        document.getElementById('alert').innerHTML = "Game already started";
+                        document.getElementById('alert').style.display = "block";
+                    }
             }
+            xhr.send();
         }
-        xhr.send();
-
     }
 });

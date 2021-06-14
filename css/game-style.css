@@ -4,17 +4,6 @@ body {
   background-attachment: fixed;
 }
 
-.overlay {
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.734);
-  z-index: 10;
-}
-
 .game-row {
   display: flex;
 }
@@ -52,14 +41,13 @@ h1 {
 }
 
 #player-wait {
-  margin-top: 160px;
+  margin-top: 200px;
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
 #player-turn {
-  /* margin-top: 330px; */
   text-align: center;
   font-size: 70px;
   font-weight: 800;
@@ -161,6 +149,43 @@ h1 {
   background-color: rgb(137, 9, 9);
 }
 
+.quit-overlay {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  right: 0;
+  width: 70px;
+  height: 70px;
+  background-color: red;
+  border-radius: 30px;
+  margin: 10px;
+  border: none;
+}
+
+.quit-overlay:hover {
+  cursor: pointer;
+  background-color: rgb(137, 9, 9);
+}
+
+.fa-sign-out-alt {
+  font-size: 30px;
+  color: white;
+}
+
+#confirmation {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  margin-bottom: 30px;
+}
+
 /* TABLET & PHONE====================================================================================== */
 
 @media screen and (max-width: 992px) {
@@ -178,15 +203,19 @@ h1 {
     margin-right: auto;
   }
 
-  .column {
+  #player-marker {
+    margin-top: 20px;
+  }
+
+  #column {
     width: 140px;
-    height: 120px;
+    height: 110px;
     margin: 10px;
   }
 
-  #tile {
+  .tile {
     text-align: center;
-    font-size: 38px;
+    font-size: 34px;
   }
 
   #quit {
@@ -195,7 +224,7 @@ h1 {
 
   #player-wait {
     width: 150px;
-    margin-top: 60px;
+    margin-top: 200px;
   }
 
   #player-turn {
